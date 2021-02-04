@@ -19,49 +19,49 @@
             session_start();
 
             if(isset($_POST["submit"]))
-        {
-            $clean = $_POST;
-            
-            $id = $clean["id"];
-            
-                if(!($clean["name"]=="")){
-                    $name = $clean["name"];
-                    $query = "UPDATE products SET ProductName = '$name' WHERE ProductID = $id";
-                    mysqli_query($conn, $query);
-                    
-                }
-
-                 if(!($clean["price"]=="")){
-                    $price = $clean["price"];
-                    $query = "UPDATE products SET ProductPrice = $price WHERE ProductID = $id";
-                    mysqli_query($conn, $query);
-                 }
-
-                 if(!($clean["quantity"]=="")){
-                    $quantity = $clean["quantity"];
-                    $query = "UPDATE products SET ProductQuantity = $quantity WHERE ProductID = $id";
-                    mysqli_query($conn, $query);    
-                 }
+            {
+                $clean = $_POST;
                 
-                 
-                 if(!($clean["category"]=="")){
-                    $catid = $clean["category"];
-                    $query = "UPDATE products SET CategoryID = $catid WHERE ProductID = $id";
-                    mysqli_query($conn, $query);
-                 }
-                 
-                 if(is_uploaded_file($_FILES["image"]["tmp_name"])){
-                    $file_pointer = "media/products/" . $id . ".jpg";
-                    
-                    if(file_exists($file_pointer)){
-                        unlink($file_pointer);
+                $id = $clean["id"];
+                
+                    if(!($clean["name"]=="")){
+                        $name = $clean["name"];
+                        $query = "UPDATE products SET ProductName = '$name' WHERE ProductID = $id";
+                        mysqli_query($conn, $query);
+                        
+                    }
+
+                    if(!($clean["price"]=="")){
+                        $price = $clean["price"];
+                        $query = "UPDATE products SET ProductPrice = $price WHERE ProductID = $id";
+                        mysqli_query($conn, $query);
+                    }
+
+                    if(!($clean["quantity"]=="")){
+                        $quantity = $clean["quantity"];
+                        $query = "UPDATE products SET ProductQuantity = $quantity WHERE ProductID = $id";
+                        mysqli_query($conn, $query);    
                     }
                     
-                    move_uploaded_file($_FILES["image"]["tmp_name"], $file_pointer);
-                    $query = "UPDATE products SET src ='$id.jpg' WHERE ProductID = $id";
-                    mysqli_query($conn,$query);
                     
-                 }  
+                    if(!($clean["category"]=="")){
+                        $catid = $clean["category"];
+                        $query = "UPDATE products SET CategoryID = $catid WHERE ProductID = $id";
+                        mysqli_query($conn, $query);
+                    }
+                    
+                    if(is_uploaded_file($_FILES["image"]["tmp_name"])){
+                        $file_pointer = "media/products/" . $id . ".jpg";
+                        
+                        if(file_exists($file_pointer)){
+                            unlink($file_pointer);
+                        }
+                        
+                        move_uploaded_file($_FILES["image"]["tmp_name"], $file_pointer);
+                        $query = "UPDATE products SET src ='$id.jpg' WHERE ProductID = $id";
+                        mysqli_query($conn,$query);
+                        
+                    }  
         }
         ?>
 
