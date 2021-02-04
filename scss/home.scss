@@ -1,0 +1,138 @@
+@import 'main.scss';
+
+/* cart alert message */
+div.alert {
+    position: fixed;
+    left: 20px;
+    bottom : 0;
+    z-index: 9999;
+}
+
+/* header */
+header .overview {
+    height: 600px;
+    background-image: url('../media/cover.jpg');
+    background-size: cover;
+    background-position: 50% 80%;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    
+    .overlay {
+        background: 
+            linear-gradient(45deg, rgba(41, 170, 226, 0.8), rgba(57, 181, 74, 0.8) 150%);
+        height: 100%;
+    }
+    
+    .welcome {
+        padding-top: 200px;
+    }
+    
+    input[type='search'] {
+        width: 70%;
+        margin-top: 30px;
+        padding: 10px 20px;
+        @include input-style($blue-color);
+        transition: all .35s ease-in-out;
+        
+        &:focus {
+            box-shadow: 0 0 5px #ddd;
+        }
+    }
+    
+}
+
+/* view-products */
+.view-products {
+    @include section-init;
+
+    h3 {
+        @include heading-style($blue-color);
+        margin-bottom: 50px;
+    }
+
+    ul.categories {
+        margin: 0;
+        padding: 0;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        text-align: center;
+
+        li { 
+            list-style: none;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.08);
+            padding: 5px 20px;
+            margin-left: 10px;
+            border-radius: 0.15rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &.current {
+                background-color: $blue-color;
+                color: #fff;
+            }
+
+            &:not(.current):hover {
+                background-color: rgba(0, 0, 0, 0.15);
+            }
+        }
+    }
+
+    .product-wrapper {
+        .product {
+            box-shadow: 0 0 5px #ddd;
+            transition: all .35s ease-in-out;
+            border: none;
+
+            .product-info {
+                color: $text-color;
+
+                p.price {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                form[name="add-to-cart-form"] {
+                    text-align: center;
+
+                    input[name="amount"] {
+                        padding-left: 10px;
+                        width: 60px;
+                        border: 1px solid $green-color;
+                        color: $green-color;
+
+                        &:focus {
+                            outline: none;
+
+                        }
+                    }
+
+                    span.out-of-stock {
+                        font-weight: bold;
+                        color: $danger-color;
+                    }
+
+                    input[type="submit"] {
+                        display: block;
+                        margin: auto;
+                        margin-top: 15px;
+                        border: none;
+                        background: $green-color;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        font-size: .8rem;
+                        padding: 15px 20px;
+                        transition: all .35s ease-in-out;
+
+                        &:hover:enabled {
+                            background: $blue-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+nav {
+  background: #fff;
+  box-shadow: 0 0 10px #a3a3a3; }
+  nav .nav-item {
+    margin-left: 20px; }
+
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: #1dc28c;
+  padding: 20px 0; }
+  footer span {
+    color: #d11f00; }
+
+body {
+  background-color: #f3f5f9; }
+
+/* cart alert message */
+div.alert {
+  position: fixed;
+  left: 20px;
+  bottom: 0;
+  z-index: 9999; }
+
+/* header */
+header .overview {
+  height: 600px;
+  background-image: url("../media/cover.jpg");
+  background-size: cover;
+  background-position: 50% 80%;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center; }
+  header .overview .overlay {
+    background: linear-gradient(45deg, rgba(41, 170, 226, 0.8), rgba(57, 181, 74, 0.8) 150%);
+    height: 100%; }
+  header .overview .welcome {
+    padding-top: 200px; }
+  header .overview input[type='search'] {
+    width: 70%;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 1.25rem;
+    color: #29abe2;
+    transition: all .35s ease-in-out; }
+    header .overview input[type='search']:focus {
+      outline: none;
+      box-shadow: none; }
+    header .overview input[type='search']::placeholder {
+      color: #29abe2;
+      opacity: .8; }
+    header .overview input[type='search']:focus {
+      box-shadow: 0 0 5px #ddd; }
+
+/* view-products */
+.view-products {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .view-products h3 {
+    text-align: center;
+    color: #29abe2;
+    margin-bottom: 50px; }
+    .view-products h3::before {
+      content: '';
+      display: inline-block;
+      background: #29abe2;
+      width: 20%;
+      height: 2px;
+      margin: 0 10px 10px 0; }
+    .view-products h3::after {
+      content: '';
+      display: inline-block;
+      background: #29abe2;
+      width: 20%;
+      height: 2px;
+      margin: 0 0 10px 10px; }
+  .view-products ul.categories {
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-align: center; }
+    .view-products ul.categories li {
+      list-style: none;
+      display: inline-block;
+      background-color: rgba(0, 0, 0, 0.08);
+      padding: 5px 20px;
+      margin-left: 10px;
+      border-radius: 0.15rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .3s ease-in-out; }
+      .view-products ul.categories li.current {
+        background-color: #29abe2;
+        color: #fff; }
+      .view-products ul.categories li:not(.current):hover {
+        background-color: rgba(0, 0, 0, 0.15); }
+  .view-products .product-wrapper .product {
+    box-shadow: 0 0 5px #ddd;
+    transition: all .35s ease-in-out;
+    border: none; }
+    .view-products .product-wrapper .product .product-info {
+      color: #333; }
+      .view-products .product-wrapper .product .product-info p.price {
+        font-size: 1.5rem;
+        font-weight: bold; }
+      .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] {
+        text-align: center; }
+        .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] input[name="amount"] {
+          padding-left: 10px;
+          width: 60px;
+          border: 1px solid #1dc28c;
+          color: #1dc28c; }
+          .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] input[name="amount"]:focus {
+            outline: none; }
+        .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] span.out-of-stock {
+          font-weight: bold;
+          color: #da513e; }
+        .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] input[type="submit"] {
+          display: block;
+          margin: auto;
+          margin-top: 15px;
+          border: none;
+          background: #1dc28c;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: .8rem;
+          padding: 15px 20px;
+          transition: all .35s ease-in-out; }
+          .view-products .product-wrapper .product .product-info form[name="add-to-cart-form"] input[type="submit"]:hover:enabled {
+            background: #29abe2; }

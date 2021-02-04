@@ -1,0 +1,12 @@
+@import '_colors.scss';
+
+footer {
+    text-align: center;
+    color: #fff;
+    background-color: $green-color;
+    padding: 20px 0;
+
+    span {
+        color: #d11f00;
+    }
+}

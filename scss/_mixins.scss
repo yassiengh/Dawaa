@@ -1,0 +1,55 @@
+@mixin section-init {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@mixin heading-style($color) {
+    text-align: center;
+    color: $color;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        background: $color;
+        width: 20%;
+        height: 2px;
+        margin: 0 10px 10px 0;
+    }
+    
+    &::after {
+        content: '';
+        display: inline-block;
+        background: $color;
+        width: 20%;
+        height: 2px;
+        margin: 0 0 10px 10px;
+    }
+}
+
+@mixin input-style($txtColor){
+    border: 0;
+    border-radius: 1.25rem;
+    color: $txtColor;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &::placeholder{
+        color:$txtColor;
+        opacity: .8;
+    }
+}
+
+@mixin btn-style($width, $colorA, $colorB){
+    border-radius: 1.25rem;
+    width: $width;
+    background-color: $colorA;
+    border: 0;
+
+    &:active,
+    &:hover {
+        background-color: $colorB;
+    }
+}

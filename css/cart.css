@@ -1,0 +1,170 @@
+nav {
+  background: #fff;
+  box-shadow: 0 0 10px #a3a3a3; }
+  nav .nav-item {
+    margin-left: 20px; }
+
+footer {
+  text-align: center;
+  color: #fff;
+  background-color: #1dc28c;
+  padding: 20px 0; }
+  footer span {
+    color: #d11f00; }
+
+body {
+  background-color: #f3f5f9; }
+
+/* cart alert message */
+div.alert {
+  position: fixed;
+  left: 20px;
+  bottom: 0;
+  z-index: 9999; }
+
+/* make order box */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: none; }
+
+.make-order-box {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  visibility: hidden; }
+  .make-order-box .bill-wrapper {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: .25em;
+    box-shadow: 0 0 5px 0 #000;
+    display: flex; }
+    .make-order-box .bill-wrapper .bill-and-payment, .make-order-box .bill-wrapper .bill, .make-order-box .bill-wrapper .payment {
+      margin: 10px;
+      color: #333; }
+    .make-order-box .bill-wrapper .bill {
+      flex: 2;
+      position: relative; }
+      .make-order-box .bill-wrapper .bill #bill-table {
+        width: 100%;
+        padding-right: 20px; }
+        .make-order-box .bill-wrapper .bill #bill-table tr:last-child {
+          font-weight: bold;
+          position: relative; }
+          .make-order-box .bill-wrapper .bill #bill-table tr:last-child::after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 88%;
+            height: 1px;
+            background: #aaa;
+            left: 5px; }
+        .make-order-box .bill-wrapper .bill #bill-table tr td {
+          padding: 10px 0; }
+      .make-order-box .bill-wrapper .bill:after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 1px;
+        background: #ddd;
+        position: absolute;
+        right: 0;
+        top: 0; }
+    .make-order-box .bill-wrapper .payment {
+      flex: 1; }
+      .make-order-box .bill-wrapper .payment form[name="make-order-form"] {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px; }
+        .make-order-box .bill-wrapper .payment form[name="make-order-form"] label {
+          font-size: 16px;
+          font-weight: bold;
+          text-align: left; }
+        .make-order-box .bill-wrapper .payment form[name="make-order-form"] select#payment-method, .make-order-box .bill-wrapper .payment form[name="make-order-form"] input[type="submit"] {
+          display: block;
+          margin-bottom: 10px; }
+        .make-order-box .bill-wrapper .payment form[name="make-order-form"] input[type="submit"] {
+          background: #333f4f;
+          margin-top: 30px;
+          border: none;
+          transition: all .35s ease-in-out; }
+          .make-order-box .bill-wrapper .payment form[name="make-order-form"] input[type="submit"]:hover {
+            background: #47586e; }
+      .make-order-box .bill-wrapper .payment span#cancel-btn {
+        width: 100%;
+        background: none;
+        color: #333f4f;
+        border: 1px solid #333f4f; }
+        .make-order-box .bill-wrapper .payment span#cancel-btn:hover {
+          cursor: pointer; }
+
+/* my-cart */
+.my-cart {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 550px;
+  /* cart-wrapper */
+  /* Make order button */ }
+  .my-cart h3 {
+    text-align: center;
+    color: #29abe2; }
+    .my-cart h3::before {
+      content: '';
+      display: inline-block;
+      background: #29abe2;
+      width: 20%;
+      height: 2px;
+      margin: 0 10px 10px 0; }
+    .my-cart h3::after {
+      content: '';
+      display: inline-block;
+      background: #29abe2;
+      width: 20%;
+      height: 2px;
+      margin: 0 0 10px 10px; }
+  .my-cart p#empty-cart {
+    display: none;
+    font-weight: bold;
+    font-size: 2.25rem;
+    text-align: center;
+    color: #333;
+    margin: 130px 0; }
+  .my-cart .cart-wrapper {
+    margin-top: 50px;
+    font-size: 1rem;
+    font-weight: bold; }
+    .my-cart .cart-wrapper .cart-item {
+      border: 1px solid #ccc !important;
+      box-shadow: 0 0 5px #ccc; }
+      .my-cart .cart-wrapper .cart-item .card-body {
+        position: relative; }
+        .my-cart .cart-wrapper .cart-item .card-body span {
+          display: block; }
+        .my-cart .cart-wrapper .cart-item .card-body .remove-btn {
+          position: absolute;
+          bottom: 10px;
+          right: 10px; }
+  .my-cart #make-order {
+    background: #29abe2;
+    color: #fff;
+    transition: all .35s ease-in-out;
+    width: 200px;
+    font-weight: bold; }
+    .my-cart #make-order:hover {
+      cursor: pointer;
+      background: #1e81ac; }
+    .my-cart #make-order:active {
+      background: #29abe2; }

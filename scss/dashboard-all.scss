@@ -1,0 +1,82 @@
+@import '_colors.scss';
+@import '_mixins.scss';
+
+body {
+    background-color: $main-bg;
+    display: flex;
+    flex-direction: row;
+}
+
+/* dashboard's sidebar */
+.dashboard{
+    background-color: $dashboard-color;
+    color: $dashboard-text-color;
+    width: 250px;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    div.logo {
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+    hr {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            li {
+                padding: 10px 20px;
+                transition: all .15s ease-in-out;
+
+                &.active {
+                    background: #222a35;
+                    color: #fff;
+                }
+    
+                &:hover:not(.active) {
+                    color: #fff;
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+                i {
+                    margin-right: 15px;
+                    display: inline-block;
+                    width: 20px;
+                }
+            }
+
+        }
+    }
+}
+
+/* content */
+.content {
+    @include section-init;
+    color: $text-color;
+    text-align: center;
+    flex: 1;
+    
+    .content-section {
+        h3 {
+            @include heading-style($blue-color);
+            font-size: 2.3vw;
+        }
+    }
+        
+
+}

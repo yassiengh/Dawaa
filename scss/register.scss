@@ -1,0 +1,33 @@
+@import 'main.scss';
+
+/* register */
+.register {
+    @include section-init;
+    min-height: 550px;
+
+    h3 {
+        @include heading-style($green-color);
+        margin-bottom: 50px;
+    }
+
+    div.alert {
+        margin-bottom: 50px;
+        width: 400px;
+    }
+
+    form[name="register-form"] {
+        margin-bottom: 40px;
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]{
+            @include input-style($blue-color);
+            border: 2px solid $blue-color;
+            width: 400px;
+        }
+
+        input[type="submit"] {
+            @include btn-style(400px, $green-color, #1ce09f);
+        }
+    }
+}

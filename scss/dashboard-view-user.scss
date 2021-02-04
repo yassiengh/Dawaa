@@ -1,0 +1,67 @@
+@import '_colors.scss';
+@import '_mixins.scss';
+
+/* content */
+.content {
+
+    /* view-users */
+    .view-users {
+    
+        form[name="view-users-form"]{
+            display: flex;
+            justify-content: center;
+            margin: 50px 0;
+    
+            input[type="text"] {
+                @include input-style($blue-color);
+                border: 2px solid $blue-color;
+                padding: 10px;
+                margin-right: 10px;
+                text-align: center;
+            }
+    
+            input[type="submit"] {
+                @include btn-style(none, $blue-color, $dashboard-color);
+                color: #fff;
+                transition: all .35s ease-in-out;
+                padding: 10px 20px;
+            }
+    
+            @media (max-width: 991px) {
+                flex-direction: column;
+    
+                input[type="text"] {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .user-info {
+            max-width: 500px;
+            margin: auto;
+
+            i {
+                font-size: 5rem;
+            }
+
+            .info {
+                margin-top: 20px;
+                text-align: left;
+                padding: 0 50px;
+
+                & > span {
+                    display: block;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: $blue-color;
+
+                    span.data {
+                        font-weight: normal;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
