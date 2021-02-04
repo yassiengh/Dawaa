@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="css/dashboard-update-product.css">
     </head>
     <body>
-
         <?php require_once 'common/connection.php'; ?>
 
         <!-- dashboard sidebar -->
@@ -32,7 +31,7 @@
                     
                 }
 
-                 if(!($_POST["price"]=="")){
+                 if(!($clean["price"]=="")){
                     $price = $clean["price"];
                     $query = "UPDATE products SET ProductPrice = $price WHERE ProductID = $id";
                     mysqli_query($conn, $query);
